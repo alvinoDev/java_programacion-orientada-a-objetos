@@ -28,7 +28,7 @@ La organización de los archivos sigue la estructura de los cursos de la beca:
 ```txt
 java_programacion-orientada-a-objetos/
 ├── firstProgram/
-│   └── src
+│   └── src/
 │       ├── helloWorld.java
 │       ├── decisions.java
 │       ├── temperatureConversion.java
@@ -36,10 +36,9 @@ java_programacion-orientada-a-objetos/
 │       ├── evaluaciones.java
 │       ├── dataReading.java
 │       ├── guessingGame.java
-│       ├── ...
-│       └── ... (archivos)
+│       └──  challengeBankAccount.java
 ├── screenMatch/
-│   └── src
+│   └── src/
 │       ├── models/
 │       ├── Main.java
 │       └── ... (archivos)
