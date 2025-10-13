@@ -36,11 +36,11 @@ java_programacion-orientada-a-objetos/
 │       ├── evaluaciones.java
 │       ├── dataReading.java
 │       ├── guessingGame.java
-│       └──  challengeBankAccount.java
+│       └── challengeBankAccount.java
 ├── screenMatch/
 │   └── src/
-│       ├── models/
-│       ├── Main.java
+│       ├── Movie.java
+│       ├── Principal.java
 │       └── ... (archivos)
 ├── java_colecciones/
 ├── java_api_errores/
