@@ -39,7 +39,7 @@ java_programacion-orientada-a-objetos/
 │       └── challengeBankAccount.java
 ├── screenMatch/
 │   └── src/
-│       ├── Movie.java
+│       ├── com.aluracursos.screenmatch.models.Movie.java
 │       ├── Principal.java
 │       └── ... (archivos)
 ├── java_colecciones/
