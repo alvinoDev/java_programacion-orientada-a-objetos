@@ -44,6 +44,15 @@ public class Title {
         return numberOfRatings;
     }
 
+    public void movieRating(double rating) {
+        sumOfMovieRatings += rating;
+        numberOfRatings ++;
+    }
+
+    public double calculateAverage(){
+        return sumOfMovieRatings / numberOfRatings;
+    }
+
     public void showTechnicalSpecifications() {
         String message = """
             ╔═════════════════════════════════════════════════════
@@ -53,16 +62,7 @@ public class Title {
             ║ FECHA DE LANZAMIENTO: %s
             ║ DURACION: %s
             ╚═════════════════════════════════════════════════════\n
-        """.formatted(name, releaseDate, durationInMinutes);
+        """.formatted(name, releaseDate, getDurationInMinutes());
         System.out.println(message);
-    }
-
-    public void movieRating(double rating) {
-        sumOfMovieRatings += rating;
-        numberOfRatings ++;
-    }
-
-    public double calculateAverage(){
-        return sumOfMovieRatings / numberOfRatings;
     }
 }

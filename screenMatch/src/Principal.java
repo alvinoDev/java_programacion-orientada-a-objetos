@@ -1,3 +1,4 @@
+import com.aluracursos.screenmatch.models.Serie;
 import com.aluracursos.screenmatch.models.Title;
 
 public class Principal {
@@ -15,7 +16,17 @@ public class Principal {
         myMovie.movieRating(6);
         myMovie.movieRating(10);
 
-        System.out.println("totalOfRatings: " + myMovie.totalOfRatings());
-        System.out.println("MEDIA: " + myMovie.calculateAverage());
+        System.out.println("    ║ MEDIA: " + myMovie.calculateAverage() + " (" + myMovie.totalOfRatings() + ")");
+
+        Serie mySerie = new Serie();
+        mySerie.setName("The Theory Big Bang");
+        mySerie.setReleaseDate(2007);
+        mySerie.setSeasons(12);
+        mySerie.setMinutesEpisode(23);
+        mySerie.setEpisodesSeason(24);
+
+        mySerie.showTechnicalSpecifications();
+
+        System.out.println("    ║ DURACION: " + mySerie.getDurationInMinutes());
     }
 }
