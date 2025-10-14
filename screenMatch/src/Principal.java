@@ -1,8 +1,8 @@
-import com.aluracursos.screenmatch.models.Movie;
+import com.aluracursos.screenmatch.models.Title;
 
 public class Principal {
     public static void main(String[] args) {
-        Movie myMovie = new Movie();
+        Title myMovie = new Title();
         // System.out.println(myMovie); //com.aluracursos.screenmatch.models.Movie@8efb846
         myMovie.setName("Your Name");
         myMovie.setReleaseDate(2016);
