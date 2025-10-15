@@ -55,13 +55,13 @@ public class Title {
 
     public void showTechnicalSpecifications() {
         String message = """
+            \n
             ╔═════════════════════════════════════════════════════
             ║                  🎞️ MY MOVIE 🎞️                     
             ╠═════════════════════════════════════════════════════
             ║ PELICUA: %s
             ║ FECHA DE LANZAMIENTO: %s
             ║ DURACION: %s
-            ╚═════════════════════════════════════════════════════\n
         """.formatted(name, releaseDate, getDurationInMinutes());
         System.out.println(message);
     }

@@ -1,4 +1,6 @@
+import com.aluracursos.screenmatch.calculations.RecommendationFilter;
 import com.aluracursos.screenmatch.calculations.TimeCalculator;
+import com.aluracursos.screenmatch.models.Episode;
 import com.aluracursos.screenmatch.models.Movie;
 import com.aluracursos.screenmatch.models.Serie;
 
@@ -24,20 +26,31 @@ public class Principal {
 
         System.out.println("    ║ TIEMPO TOTAL PELICULA: " + timeCalculator1.getTotalTime());
 
-        Serie mySerie = new Serie();
-        mySerie.setName("The Theory Big Bang");
-        mySerie.setReleaseDate(2007);
-        mySerie.setSeasons(12);
-        mySerie.setMinutesEpisode(23);
-        mySerie.setEpisodesSeason(24);
+        RecommendationFilter recommendationFilter = new RecommendationFilter();
+        recommendationFilter.filter(myMovie);
 
-        mySerie.showTechnicalSpecifications();
+        Serie theTheoryBigBang = new Serie();
+        theTheoryBigBang.setName("The Theory Big Bang");
+        theTheoryBigBang.setReleaseDate(2007);
+        theTheoryBigBang.setSeasons(12);
+        theTheoryBigBang.setMinutesEpisode(23);
+        theTheoryBigBang.setEpisodesSeason(24);
 
-        System.out.println("    ║ DURACION: " + mySerie.getDurationInMinutes());
+        theTheoryBigBang.showTechnicalSpecifications();
+
+        System.out.println("    ║ DURACION: " + theTheoryBigBang.getDurationInMinutes());
 
         TimeCalculator timeCalculator2 = new TimeCalculator();
-        timeCalculator2.addTime(mySerie);
+        timeCalculator2.addTime(theTheoryBigBang);
 
-        System.out.println("    ║ TIEMPO TOTAL PELICULA: " + timeCalculator2.getTotalTime());
+        System.out.println("    ║ TIEMPO TOTAL SERIE: " + timeCalculator2.getTotalTime());
+
+        Episode episode = new Episode();
+        episode.setNumber(1);
+        episode.setName("Piloto");
+        episode.setSerie(theTheoryBigBang);
+        episode.setTotalViews(799);
+
+        recommendationFilter.filter(episode);
     }
 }
