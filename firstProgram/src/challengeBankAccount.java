@@ -24,7 +24,7 @@ void main() {
 
     String messageMenu = """
             ╔═════════════════════════════════════════════════════╗
-            ║        Cajero Automático - Menú Principal           ║
+            ║        Cajero Automático - Menú com.aluracursos.screenmatch.principal.Principal           ║
             ╠═════════════════════════════════════════════════════╣
             ║ [1] 🏦 Consultar Saldo                              ║
             ║ [2] 💸 Retirar Dinero                               ║

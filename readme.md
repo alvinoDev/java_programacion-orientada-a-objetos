@@ -40,7 +40,7 @@ java_programacion-orientada-a-objetos/
 ├── screenMatch/
 │   └── src/
 │       ├── com.aluracursos.screenmatch.models.Movie.java
-│       ├── Principal.java
+│       ├── com.aluracursos.screenmatch.principal.Principal.java
 │       └── ... (archivos)
 ├── java_colecciones/
 ├── java_api_errores/
