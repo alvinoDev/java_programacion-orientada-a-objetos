@@ -8,10 +8,8 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Movie myMovie = new Movie();
+        Movie myMovie = new Movie("Your Name", 2016);
         // System.out.println(myMovie); //com.aluracursos.screenmatch.models.Movie@8efb846
-        myMovie.setName("Your Name");
-        myMovie.setReleaseDate(2016);
         myMovie.setDurationInMinutes(150);
         myMovie.setIncludedInPlan(true);
 
@@ -31,9 +29,7 @@ public class Principal {
         RecommendationFilter recommendationFilter = new RecommendationFilter();
         recommendationFilter.filter(myMovie);
 
-        Serie theTheoryBigBang = new Serie();
-        theTheoryBigBang.setName("The Theory Big Bang");
-        theTheoryBigBang.setReleaseDate(2007);
+        Serie theTheoryBigBang = new Serie("The Theory Big Bang", 2007);
         theTheoryBigBang.setSeasons(12);
         theTheoryBigBang.setMinutesEpisode(23);
         theTheoryBigBang.setEpisodesSeason(24);
@@ -57,9 +53,7 @@ public class Principal {
 
         System.out.println("-------------------------------------------------");
 
-        Movie movieBigHero = new Movie();
-        movieBigHero.setName("Big Hero");
-        movieBigHero.setReleaseDate(2016);
+        Movie movieBigHero = new Movie("Big Hero", 2016);
         movieBigHero.setDurationInMinutes(180);
 
         ArrayList<Movie> movieArrayList = new ArrayList<>();

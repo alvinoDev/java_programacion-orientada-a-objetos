@@ -5,6 +5,10 @@ public class Serie extends Title {
     private int episodesSeason;
     private int minutesEpisode;
 
+    public Serie(String name, int releaseDate) {
+        super(name, releaseDate);
+    }
+
     @Override
     public int getDurationInMinutes() {
         return seasons * episodesSeason * minutesEpisode;

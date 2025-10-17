@@ -5,6 +5,10 @@ import com.aluracursos.screenmatch.calculations.Classification;
 public class Movie extends Title implements Classification {
    private String director;
 
+    public Movie(String name, int releaseDate) {
+        super(name, releaseDate);
+    }
+
     public String getDirector() {
         return director;
     }
