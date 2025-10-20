@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/java_programacion-orientada-a-objetos.iml" filepath="$PROJECT_DIR$/.idea/java_programacion-orientada-a-objetos.iml" />
       <module fileurl="file://$PROJECT_DIR$/radioLatina/radioLatina.iml" filepath="$PROJECT_DIR$/radioLatina/radioLatina.iml" />
       <module fileurl="file://$PROJECT_DIR$/screenMatch/screenMatch.iml" filepath="$PROJECT_DIR$/screenMatch/screenMatch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shoppingApp/shoppingApp.iml" filepath="$PROJECT_DIR$/shoppingApp/shoppingApp.iml" />
     </modules>
   </component>
 </project>
