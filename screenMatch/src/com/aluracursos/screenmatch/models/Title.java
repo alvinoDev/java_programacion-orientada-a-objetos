@@ -1,6 +1,6 @@
 package com.aluracursos.screenmatch.models;
 
-public class Title {
+public class Title implements Comparable<Title> {
     public String name;
     private int releaseDate;
     private int durationInMinutes;
@@ -69,5 +69,10 @@ public class Title {
             ║ DURACION: %s
         """.formatted(name, releaseDate, getDurationInMinutes());
         System.out.println(message);
+    }
+
+    @Override
+    public int compareTo(Title otherTitle) {
+        return this.getName().compareTo(otherTitle.getName());
     }
 }

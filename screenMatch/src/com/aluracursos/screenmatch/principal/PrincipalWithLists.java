@@ -5,6 +5,9 @@ import com.aluracursos.screenmatch.models.Serie;
 import com.aluracursos.screenmatch.models.Title;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
 
 public class PrincipalWithLists {
     public static void main(String[] args) {
@@ -14,7 +17,7 @@ public class PrincipalWithLists {
         Movie otherMovie = new Movie("Avatar", 2023);
         otherMovie.movieRating(7);
 
-        var movieOfBruno = new Movie("el señor de los anillos", 2001);
+        var movieOfBruno = new Movie("El señor de los anillos", 2001);
         movieOfBruno.movieRating(9.5);
 
         Serie serieBruno = new Serie("Lost", 2000);
@@ -50,5 +53,24 @@ public class PrincipalWithLists {
                 System.out.println(movie.getClassification());
             }
         }
+
+        System.out.println("==================================================");
+        ArrayList<String> artistList = new ArrayList<>();
+        // List<String> artistList3 = new ArrayList<>();
+        // List<String> artistList2 = new LinkedList<>();
+        artistList.add("Penelope Cruz");
+        artistList.add("Antonio Banderas");
+        artistList.add("Ricardo Darain");
+        System.out.println("Lista no Ordenada - letra: " + artistList);
+
+        Collections.sort(artistList);
+        System.out.println("Lista Ordenada - letra: " + artistList);
+
+        Collections.sort(arrayList);
+        System.out.println("Lista de Titulos Ordenada: " + arrayList);
+
+        arrayList.sort(Comparator.comparing(Title::getReleaseDate));
+        System.out.println("Lista de Titulos Ordenada - fecha: " + arrayList);
+
     }
 }
