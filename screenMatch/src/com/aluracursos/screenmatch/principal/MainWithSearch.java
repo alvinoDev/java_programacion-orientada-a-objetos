@@ -23,35 +23,39 @@ public class MainWithSearch {
         String url_omdbapi = "https://www.omdbapi.com/?t=" + dataSearch + "&apikey=34353774";
 
 
-        HttpClient client = HttpClient.newHttpClient();
-
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(url_omdbapi))
-                .build();
-
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
-
-        String movieJson = response.body();
-        System.out.println(movieJson);
-
-        System.out.println("-----------------------------------------------");
-
-        // Gson gson = new Gson();
-        // Title myTitle = gson.fromJson(movieJson, Title.class);
-
-        Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                .create();
-        TitleOmdb myTitleOmdb = gson.fromJson(movieJson, TitleOmdb.class);
-        System.out.println(myTitleOmdb);
-
         try {
+            HttpClient client = HttpClient.newHttpClient();
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url_omdbapi))
+                    .build();
+
+            HttpResponse<String> response = client
+                    .send(request, HttpResponse.BodyHandlers.ofString());
+
+            String movieJson = response.body();
+            System.out.println(movieJson);
+
+            System.out.println("-----------------------------------------------");
+
+            // Gson gson = new Gson();
+            // Title myTitle = gson.fromJson(movieJson, Title.class);
+
+            Gson gson = new GsonBuilder()
+                    .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                    .create();
+            TitleOmdb myTitleOmdb = gson.fromJson(movieJson, TitleOmdb.class);
+            System.out.println(myTitleOmdb);
+
             Title myTitle = new Title(myTitleOmdb);
-            System.out.println(myTitle);
+            System.out.println("Titulo convertido: " + myTitle);
         }catch (NumberFormatException e) {
             System.out.println("Ocurrio un error!");
             System.out.println(e.getMessage());
+        }catch (IllegalArgumentException e) {
+            System.out.println("Error en la URL, verifique la direccion!");
+        }catch (Exception e) {
+            System.out.println("Ocurrio un error Inesperado!");
         }
 
         System.out.println("Ejecucion del programa finalizado!");
