@@ -46,8 +46,15 @@ public class MainWithSearch {
         TitleOmdb myTitleOmdb = gson.fromJson(movieJson, TitleOmdb.class);
         System.out.println(myTitleOmdb);
 
-        Title myTitle = new Title(myTitleOmdb);
-        System.out.println(myTitle);
+        try {
+            Title myTitle = new Title(myTitleOmdb);
+            System.out.println(myTitle);
+        }catch (NumberFormatException e) {
+            System.out.println("Ocurrio un error!");
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Ejecucion del programa finalizado!");
 
     }
 }
