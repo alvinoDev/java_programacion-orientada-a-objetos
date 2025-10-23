@@ -1,5 +1,6 @@
 package com.aluracursos.screenmatch.models;
 
+import com.aluracursos.screenmatch.exceptions.ErrorConvertionDurationMinutesException;
 import com.google.gson.annotations.SerializedName;
 
 public class Title implements Comparable<Title> {
@@ -20,7 +21,11 @@ public class Title implements Comparable<Title> {
     public Title(TitleOmdb myTitleOmdb) {
         this.name = myTitleOmdb.title();
         this.releaseDate = Integer.valueOf(myTitleOmdb.year());
-        this.durationInMinutes = Integer.valueOf(myTitleOmdb.runtime().substring(0,3));
+
+        if(myTitleOmdb.runtime().contains("N/A")) {
+            throw new ErrorConvertionDurationMinutesException("No se puede convetir la duracion, por que contiene un 'N/A'" );
+        }
+        this.durationInMinutes = Integer.valueOf( myTitleOmdb.runtime().substring(0,3).replace(" ", "") );
     }
 
     public String getName() {
