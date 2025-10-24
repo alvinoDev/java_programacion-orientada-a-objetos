@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/radioLatina/radioLatina.iml" filepath="$PROJECT_DIR$/radioLatina/radioLatina.iml" />
       <module fileurl="file://$PROJECT_DIR$/screenMatch/screenMatch.iml" filepath="$PROJECT_DIR$/screenMatch/screenMatch.iml" />
       <module fileurl="file://$PROJECT_DIR$/shoppingApp/shoppingApp.iml" filepath="$PROJECT_DIR$/shoppingApp/shoppingApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/starwarsapi/starwarsapi.iml" filepath="$PROJECT_DIR$/starwarsapi/starwarsapi.iml" />
     </modules>
   </component>
 </project>
