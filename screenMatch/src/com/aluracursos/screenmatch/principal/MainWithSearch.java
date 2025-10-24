@@ -13,57 +13,67 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MainWithSearch {
     static void main() throws IOException, InterruptedException {
 
         Scanner inputData = new Scanner(System.in);
-        System.out.print("Escribe el nombre de la pelicula: ");
+        List<Title> titles = new ArrayList<>();
 
-        String dataSearch = inputData.next().replace(" ", "+");
-        String url_omdbapi = "https://www.omdbapi.com/?t=" + dataSearch + "&apikey=34353774";
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .setPrettyPrinting()
+                .create();
 
-        try {
-            HttpClient client = HttpClient.newHttpClient();
+        while (true){
+            System.out.print("Escribe el nombre de la pelicula: ");
+            String dataSearch = inputData.next().replace(" ", "+");
 
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(url_omdbapi))
-                    .build();
+            if(dataSearch.equalsIgnoreCase("salir")){ break; }
 
-            HttpResponse<String> response = client
-                    .send(request, HttpResponse.BodyHandlers.ofString());
+            String url_omdbapi = "https://www.omdbapi.com/?t=" + dataSearch + "&apikey=34353774";
 
-            String movieJson = response.body();
-            System.out.println(movieJson);
+            try {
+                HttpClient client = HttpClient.newHttpClient();
 
-            System.out.println("-----------------------------------------------");
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create(url_omdbapi))
+                        .build();
 
-            // Gson gson = new Gson();
-            // Title myTitle = gson.fromJson(movieJson, Title.class);
+                HttpResponse<String> response = client
+                        .send(request, HttpResponse.BodyHandlers.ofString());
 
-            Gson gson = new GsonBuilder()
-                    .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                    .create();
-            TitleOmdb myTitleOmdb = gson.fromJson(movieJson, TitleOmdb.class);
-            System.out.println(myTitleOmdb);
+                String movieJson = response.body();
+                System.out.println(movieJson);
 
-            Title myTitle = new Title(myTitleOmdb);
-            System.out.println("Titulo convertido: " + myTitle);
+                System.out.println("-----------------------------------------------");
 
-            FileWriter fileWrite = new FileWriter("Peliculas.txt");
-            fileWrite.write(myTitle.toString());
-            fileWrite.close();
+                TitleOmdb myTitleOmdb = gson.fromJson(movieJson, TitleOmdb.class);
+                System.out.println(myTitleOmdb);
 
-        }catch (NumberFormatException e) {
-            System.out.println("Ocurrio un error!");
-            System.out.println(e.getMessage());
-        }catch (IllegalArgumentException e) {
-            System.out.println("Error en la URL, verifique la direccion!");
-        }catch (ErrorConvertionDurationMinutesException e) {
-            System.out.println(e.getMessage());
+                Title myTitle = new Title(myTitleOmdb);
+                System.out.println("Titulo convertido: " + myTitle);
+
+                titles.add(myTitle);
+
+            }catch (NumberFormatException e) {
+                System.out.println("Ocurrio un error!");
+                System.out.println(e.getMessage());
+            }catch (IllegalArgumentException e) {
+                System.out.println("Error en la URL, verifique la direccion!");
+            }catch (ErrorConvertionDurationMinutesException e) {
+                System.out.println(e.getMessage());
+            }
         }
 
+        System.out.println(titles);
+
+        FileWriter writeTitle = new FileWriter("titles.json");
+        writeTitle.write(gson.toJson(titles));
+        writeTitle.close();
         System.out.println("Ejecucion del programa finalizado!");
 
     }
