@@ -15,10 +15,10 @@ La siguiente tabla detalla los cursos completados y su ubicación dentro del rep
 | Curso / Módulo | Estado | Carpeta Local | Descripción Breve |
 | :--- | :---: | :--- | :--- |
 | **1. Java: creando tu primera aplicación** | ✅ Completado | `firstProgram/` | Sintaxis básica, variables, tipos de datos, control de flujo y estructuras de decisión. |
-| **2. Java: aplicando la Orientación a Objetos** | ⏳ En Progreso | `screenMatch/` | Clases, objetos, métodos, herencia, interfaces, y principios de POO. |
-| **3. Java: trabajar con listas y colecciones de datos** | ❌ Pendiente | `java_colecciones/` | Uso de List, Set, Map, ArrayList, LinkedList y Streams. |
-| **4. Java: consumir API, escribir archivos y manejar errores** | ❌ Pendiente | `java_api_errores/` | Conexión a APIs externas, manejo de JSON, lectura/escritura de archivos y excepciones. |
-| **5. Practicando con Java: Challenge Conversor de Monedas** | ❌ Pendiente | `challenge_conversor/` | Proyecto final práctico aplicando API y manejo de errores. |
+| **2. Java: aplicando la Orientación a Objetos** | ✅ Completado | `screenMatch/` | Clases, objetos, métodos, herencia, interfaces, y principios de POO. |
+| **3. Java: trabajar con listas y colecciones de datos** | ✅ Completado | `java_colecciones/` | Uso de List, Set, Map, ArrayList, LinkedList y Streams. |
+| **4. Java: consumir API, escribir archivos y manejar errores** | ✅ Completado | `java_api_errores/` | Conexión a APIs externas, manejo de JSON, lectura/escritura de archivos y excepciones. |
+| **5. Practicando con Java: Challenge Conversor de Monedas** | ✅ Completado | `challenge_conversor/` | Proyecto final práctico aplicando API y manejo de errores. |
 
 
 ## 📂 Estructura de Carpetas
